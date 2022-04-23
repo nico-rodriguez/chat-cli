@@ -45,4 +45,8 @@ io.on('connection', (socket) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.render('Chat server');
+});
+
 httpServer.listen(PORT, () => console.log(`Server listening on PORT ${PORT}!`));
