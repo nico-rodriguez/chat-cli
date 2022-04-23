@@ -1,0 +1,22 @@
+{
+  "name": "chat-cli",
+  "version": "1.0.0",
+  "description": "A real time chat CLI written in Node with Express and Socket.io",
+  "main": "server.js",
+  "bin": "./chat-cli.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "client": "node chat-cli.js"
+  },
+  "keywords": [],
+  "author": "Nicolás Rodríguez",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
