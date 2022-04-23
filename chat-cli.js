@@ -35,7 +35,9 @@ const setServerCommand = {
 
 const cli = new CLI()
   .setName('chat-cli')
-  .setInfo('Real time chat CLI')
+  .setInfo(
+    "Set a chat server with 'set-server \"<URL>\"' or use the default 'http://localhost:3000'.\nFor joining a chat type 'login \"<USERNAME>\" \"<ROOM_NAME>\"'.\nOther users can chat with you if the connect to the same server and the same room.\nType 'help' for additional info."
+  )
   .setVersion('1.0.0')
   .setDelimiter(initialDelimiter)
   // **************** set-server command
@@ -82,7 +84,7 @@ const cli = new CLI()
           // clear the last prompt and this command output, and write the sent message
           return console.log(
             '\033[F\033[F\u001b[0J' +
-              `(${moment().format('hh:mm a')}) ` +
+              `\n(${moment().format('hh:mm a')}) ` +
               'You'.green +
               ': ' +
               message +
@@ -131,11 +133,14 @@ const cli = new CLI()
   .addCommand('exit', {
     description: 'Exit the program',
     action: () => {
-      // Notify that we are leaving the room
-      socket.emit('room:leave');
-      // Close the connection
-      socket.disconnect();
+      if (socket?.connected) {
+        // Notify that we are leaving the room
+        socket.emit('room:leave');
+        // Close the connection
+        socket.disconnect();
+      }
       process.exit(0);
     },
   })
+  .showHelp()
   .show();
