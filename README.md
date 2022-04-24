@@ -4,6 +4,10 @@
 
 A Node CLI for real time chat communication with Socket.io.
 
+## Demo
+
+![demo](./demo.gif)
+
 ## Features
 
 - Real time message exchange.
