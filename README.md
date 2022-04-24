@@ -6,7 +6,13 @@ A Node CLI for real time chat communication with Socket.io.
 
 ## Demo
 
+### Chat between two users
+
 ![demo](./demo.gif)
+
+### Error connecting to the server
+
+![demo-error](./demo-error.gif)
 
 ## Features
 
