@@ -55,4 +55,4 @@ Successfully logged in!
 Welcome to the <ROOM> chat <USERNAME>!
 ```
 
-After that, ask some friend in Alaska to do the same. When he's done, both of you can chat in real time (both must use the same room's name).
+Note: in order to chat with another user, both must set the same server and login to the same room.
